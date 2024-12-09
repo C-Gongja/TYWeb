@@ -1,0 +1,466 @@
+/* Projects Section CSS */
+:root {
+	--card_width: 350px;
+	--card_height: 650px;
+	--card_gap: 5px;
+	--card_boarder-radius: 30px;
+	--main-background-color: #786cff;
+}
+
+.projects {
+	background-color: transparent;
+	padding: 0rem;
+	/* -webkit-transform-style: preserve-3d; */
+	transform-style: preserve-3d;
+	/* box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1), 0px -16px 32px rgba(0, 0, 0, 0.1); */
+}
+
+.projects__content {
+	margin-top: 4rem;
+}
+
+.projects__content h1 {
+	font-size: 4rem;
+	font-weight: 700;
+	text-align: center;
+	line-height: 2;
+	color: #292929;
+}
+
+.projects__container {
+	max-width: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	padding: 20px 0;
+}
+
+.projects__wrapper {
+	display: flex;
+	gap: var(--card_gap);
+	/* Space between cards */
+	scroll-snap-type: x mandatory;
+	list-style: none;
+}
+
+.projects__wrapper .card:first-child {
+	margin-left: 80px;
+	/* Adjust to your desired value */
+}
+
+.projects__wrapper .card:last-child {
+	margin-right: 80px;
+	/* Adjust to your desired value */
+}
+
+.projects__container::-webkit-scrollbar {
+	height: 12px;
+}
+
+.projects__container::-webkit-scrollbar-thumb,
+.projects__container::-webkit-scrollbar-track {
+	border-radius: 92px;
+}
+
+.projects__container::-webkit-scrollbar-thumb {
+	background: var(--darkred);
+}
+
+.projects__container::-webkit-scrollbar-track {
+	background: var(--thumb);
+}
+
+.scroll-button {
+	position: absolute;
+	top: 50%;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	margin: 30px;
+	width: 50px;
+	height: 50px;
+	font-size: 20px;
+	cursor: pointer;
+	z-index: 100;
+	/* Ensure visibility */
+	transform: translateY(-50%);
+	border-radius: 50%;
+	/* Make it circular */
+	display: flex;
+	align-items: center;
+	/* Center the arrow icon */
+	justify-content: center;
+	/* Center the arrow icon */
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+	/* Optional: Add shadow for better visuals */
+}
+
+.scroll-button.left {
+	left: 10px;
+}
+
+.scroll-button.right {
+	right: 10px;
+}
+
+.scroll-button:hover {
+	background: var(--main-background-color);
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	/* flex: 0 0 70%; */
+	padding: 20px;
+	/* justify-content: space-between; */
+	/* position: relative; */
+	width: var(--card_width);
+	height: var(--card_height);
+	background-color: transparent;
+	/* background-color: #f5f5f5; */
+	/* border-radius: 10px; */
+	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+
+	cursor: pointer;
+	z-index: 1;
+}
+
+.card.hidden {
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.card-inner {
+	position: relative;
+	width: var(--card_width);
+	height: var(--card_height);
+	text-align: center;
+	/* transition: transform 0.6s, width 0.6s, height 0.6s; */
+	transition: transform 0.6s ease, z-index 0.6s ease;
+	/* transform-style: preserve-3d; */
+}
+
+.card:hover .card-inner {
+	transform: scale(1.05);
+	z-index: 2;
+}
+
+.card-front,
+.card-back {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--card_boarder-radius);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backface-visibility: hidden;
+}
+
+.card-front {
+	position: absolute;
+	background-color: whitesmoke;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--card_boarder-radius);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: grid;
+	grid-template-rows: 55% 1fr;
+	/* Top row auto height, bottom row takes remaining space */
+	backface-visibility: hidden;
+	z-index: 1;
+	/* Ensure front face is below the back face */
+
+	/* backgournd */
+	background-size: contain;
+	/* Ensures the image covers the entire element */
+	/* background-position: bottom; */
+	background-position-y: 250px;
+	/* Centers the image */
+	background-repeat: no-repeat;
+	/* Prevents the image from repeating */
+}
+
+.card-title {
+	position: absolute;
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	/* Semi-transparent background */
+	color: black;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: 10px;
+	width: 90%;
+	height: 10%;
+	/* Optional styling */
+	z-index: 1;
+}
+
+.card-title h2 {
+	text-align: center;
+	/* Center-align text horizontally */
+	display: flex;
+	justify-content: center;
+	/* Center-align horizontally */
+	align-items: center;
+	/* Center-align vertically */
+}
+
+.card-bottom {
+	position: absolute;
+	top: 7rem;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	width: 90%;
+	/* Adjust width as necessary */
+	z-index: 1;
+}
+
+.card-bottom p {
+	background-color: #a097ff;
+	/* Background color for the boxes */
+	padding: 6px 13px;
+	/* Padding inside the boxes */
+	border-radius: 5px;
+	/* Rounded corners */
+	font-size: 14px;
+	color: white;
+	/* Text color */
+	display: inline-block;
+	/* Ensures the boxes fit to the content size */
+	font-weight: bold;
+	/* Make the text bold */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	/* Optional: Add a shadow for better visibility */
+	white-space: nowrap;
+	/* Prevent text from wrapping within the box */
+	overflow: hidden;
+	/* Hide overflowing text */
+	text-overflow: ellipsis;
+	/* Add ellipsis for overflowing text */
+}
+
+.card-back {
+	position: absolute;
+	background-color: rgb(113, 101, 237);
+	height: 100%;
+	/* Ensure the card-back takes full height */
+	justify-content: flex-start;
+	/* Align items to the top */
+	display: flex;
+	/* Use flexbox for layout */
+	flex-direction: column;
+	/* Arrange items vertically */
+	text-align: left;
+	color: white;
+	transform: rotateY(180deg);
+	z-index: 2;
+	/* Ensure back face is above the front face */
+}
+
+.card-back ul {
+	list-style-type: disc;
+	/* Ensures the list uses bullet points */
+	padding-left: 25px;
+	padding-top: 16px;
+	margin: 0;
+	/* Remove default margin */
+}
+
+.card-back li {
+	padding: 3px 8px;
+	/* Padding inside the list items */
+}
+
+.card-back h2 {
+	font-size: 13px;
+}
+
+/* Projects Section CSS for Mobile */
+@media screen and (max-width: 1200px) {
+	.card:hover .card-inner {
+		transform: rotateY(180deg) scale(1.05);
+		z-index: 2;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.projects__container {
+		grid-template-columns: 1fr;
+		/* Change to single column layout */
+		gap: 30px;
+		/* Reduce gap between cards */
+	}
+
+	.card {
+		width: 100%;
+		/* Adjust card width to fit container */
+		max-width: 100%;
+		/* Ensure card doesn't exceed container width */
+	}
+
+	.card:hover .card-inner {
+		transform: rotateY(180deg) scale(1);
+		z-index: 2;
+	}
+}
+
+
+
+.img-button-list {
+	position: relative;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.img-button {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 20px;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.img-button-list li {
+	position: relative;
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	/* distance between icons */
+	margin: 10px 10px;
+	line-height: 60px;
+	border-radius: 50%;
+	color: #fff;
+	background-color: whitesmoke;
+	transition: all .2s ease-in-out;
+	text-align: center;
+	/* Center icon horizontally */
+	vertical-align: middle;
+	z-index: 1;
+}
+
+.img-button a {
+	position: relative;
+	display: block;
+	text-decoration: none;
+	z-index: 3;
+}
+
+.img-button img.button-image {
+	vertical-align: middle;
+	width: 70%;
+	/* Ensure image fills the container */
+	height: auto;
+	/* Maintain aspect ratio */
+	margin-bottom: 4px;
+	/* Adjust as needed */
+	z-index: 3;
+}
+
+.img-button:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 50%;
+	opacity: 0;
+	box-shadow: 0 0 0 2px rgb(113, 101, 237);
+	transition: all 0.2s ease-in-out;
+}
+
+.img-button:hover {
+	background-color: rgb(113, 101, 237);
+}
+
+.img-button:hover:after {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1.12);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+.modal-right {
+	flex: 1;
+	padding: 20px;
+	background-color: whitesmoke;
+}
+
+.modal-right img {
+	border-radius: 0;
+	width: 100%;
+	height: auto;
+}
+
+.demo-video {
+	width: 100%;
+	/* Make the video width 100% of its parent */
+	height: auto;
+	/* Maintain the aspect ratio */
+}
+
+.modal-wrap p {
+	padding: 20px 30px 0 30px;
+}
+
+@media screen and (max-width: 850px) {
+	.modal {
+		max-width: 100%;
+	}
+
+	.modal-wrap {
+		width: 80%;
+		/* Adjusted width for smaller screens */
+		max-width: 100%;
+		/* Ensure it doesn't exceed screen width */
+		max-height: 70%;
+		padding: 20px;
+		/* Adjusted padding for content inside modal */
+	}
+
+	.modal-title {
+		font-size: 15px;
+		/* Adjusted font size for smaller screens */
+		margin-bottom: 15px;
+		/* Reduced margin bottom for smaller screens */
+	}
+
+	.close {
+		top: 13px;
+		/* Adjusted top position of close button */
+		right: 15px;
+		/* Adjusted right position of close button */
+		font-size: 25px;
+		/* Adjusted font size of close button */
+	}
+
+	.modal-columns {
+		grid-template-columns: 1fr;
+		/* Adjusted grid columns for smaller screens */
+	}
+
+	.modal-left,
+	.modal-right {
+		padding: 15px;
+		/* Adjusted padding for left and right columns */
+	}
+
+	.modal-wrap p {
+		padding: 15px 10px 0 10px;
+		/* Adjusted padding for paragraphs */
+	}
+}

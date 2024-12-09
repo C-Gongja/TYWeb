@@ -196,12 +196,12 @@ function loadAssets() {
 	const sources = document.querySelectorAll("source[src]");
 
 	images.forEach(img => {
-		const basePath = window.location.pathname.includes("resume") ? "../" : "./";
+		const basePath = window.location.pathname.includes("resume") ? ".." : "";
 		img.src = basePath + img.getAttribute("src");
 	});
 
 	sources.forEach(source => {
-		const basePath = window.location.pathname.includes("resume") ? "../" : "./";
+		const basePath = window.location.pathname.includes("resume") ? ".." : "";
 		const sourcePath = source.getAttribute("src");  // source의 src 속성값을 가져옴
 		if (sourcePath) {
 			source.src = basePath + sourcePath;  // 경로를 basePath와 합쳐서 설정

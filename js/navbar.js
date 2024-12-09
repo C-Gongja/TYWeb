@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				contactButton.style.display = "none"; // Hide the button
 			}
 
-			loadAssets();
+			// loadAssets();
 
 		})
 		.catch((error) => {
@@ -45,15 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 });
 
-function loadAssets() {
-	const images = document.querySelectorAll("img[src]");
-	console.log(window.location.pathname);
+// function loadAssets() {
+// 	const images = document.querySelectorAll("img[src]");
+// 	console.log(window.location.pathname);
 
-	images.forEach(img => {
-		if (!img.src.startsWith(window.location.origin)) {
-			const imgPath = window.location.pathname.includes("resume") ? ".." : ".";
-			console.log(imgPath);
-			img.src = imgPath + img.getAttribute("src");
-		}
-	});
-}
+// 	images.forEach(img => {
+// 		if (!img.src.startsWith(window.location.origin)) {
+// 			const imgPath = window.location.pathname.includes("resume") ? ".." : ".";
+// 			console.log(imgPath);
+// 			img.src = imgPath + img.getAttribute("src");
+// 		}
+// 	});
+// }

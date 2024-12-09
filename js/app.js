@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 
 	// Dynamically set the Resume link
+	const basePath = window.location.pathname.includes("TYWeb") ? "/TYWeb" : "";
 	const resumeLink = document.querySelector("#resume-contact");
 	if (resumeLink) {
 		resumeLink.setAttribute("href", `${basePath}/html/resume.html`);

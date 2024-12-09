@@ -14,22 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
 			navbarElement.innerHTML = data;
 
 			// Update the Home link dynamically
-			const navbarLogo = document.querySelector("#navbar__logo a[href='../index.html']");
+			const navbarLogo = document.querySelector("#navbar__logo");
 			if (navbarLogo) {
-				navbarLogo.setAttribute("href", `${basePath}/index.html`);
+				navbarLogo.setAttribute("href", `${basePath}/`);
 			}
 
-			const homeLink = document.querySelector(".navbar__menu .navbar__links[href='../index.html']");
+			const homeLink = document.querySelector("#home-link");
 			if (homeLink) {
-				homeLink.setAttribute("href", `${basePath}/index.html`);
+				homeLink.setAttribute("href", `${basePath}/`);
 			}
 
-			// Update the Resume link dynamically
-			const resumeLink = navbarElement.querySelector(".navbar__item a[href='../html/resume.html']");
+			// Dynamically set the Resume link
+			const resumeLink = document.querySelector("#resume-link");
 			if (resumeLink) {
 				resumeLink.setAttribute("href", `${basePath}/html/resume.html`);
 			}
-
 			// Hide the Contact button on specific pages
 			const contactButton = navbarElement.querySelector(".navbar__btn");
 			const excludedPages = [`${basePath}/html/resume.html`]; // Add more pages if needed

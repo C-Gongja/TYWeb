@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			menuContainer.classList.remove('active');
 		}
 	});
+
+	// Dynamically set the Resume link
+	const resumeLink = document.querySelector("#resume-contact");
+	if (resumeLink) {
+		resumeLink.setAttribute("href", `${basePath}/html/resume.html`);
+	}
+
 });
 
 /*

@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			initializeModalInteractions();
 			initializeScrollButtons();
 			cardFrontBackground();
+
+			initializeTabFunctionality();
 		})
 		.catch((error) => {
 			console.error("Error loading projects:", error);
@@ -69,4 +71,31 @@ function initializeScrollButtons() {
 
 	// Initialize visibility
 	updateArrowVisibility();
+}
+
+// Function to initialize tab switching after loading the HTML
+function initializeTabFunctionality() {
+	document.querySelectorAll('.tab-item').forEach(item => {
+		item.addEventListener('click', function () {
+			const selectedCategory = this.getAttribute('data-tab');
+
+			document.querySelectorAll('.card').forEach(card => {
+				const categories = card.getAttribute('data-category').split(',').map(cat => cat.trim());
+
+				if (selectedCategory === 'all' || categories.includes(selectedCategory)) {
+					card.style.visibility = 'visible';
+					card.style.position = 'static';
+				} else {
+					card.style.visibility = 'hidden';
+					card.style.position = 'absolute';
+				}
+			});
+
+			document.querySelectorAll('.tab-item').forEach(tab => tab.classList.remove('active'));
+			this.classList.add('active');
+		});
+	});
+
+	// 기본 탭 설정 (All)
+	document.querySelector('.tab-item[data-tab="all"]').click();
 }

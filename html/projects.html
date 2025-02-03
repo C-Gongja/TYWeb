@@ -1,10 +1,18 @@
 <div class="projects__content">
 	<h1>Projects</h1>
 </div>
+<div class="projects-tab">
+	<ul class="tab-list">
+		<li class="tab-item active" data-tab="all">All</li>
+		<li class="tab-item" data-tab="ai">AI</li>
+		<li class="tab-item" data-tab="web">Web App</li>
+		<li class="tab-item" data-tab="software">Software Application</li>
+	</ul>
+</div>
 <button class="scroll-button left" onclick="scrollLeft()">&#8592;</button>
 <div id="cardContainer" class="projects__container">
 	<div class="projects__wrapper">
-		<div class="card" data-target="modal-1">
+		<div class="card" data-target="modal-1" data-category="ai">
 			<div class="card-inner">
 				<div class="card-front" data-bg="./assest/files/projects/f1/f1_logo.png">
 					<div class="card-title">
@@ -31,7 +39,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="card" data-target="modal-2">
+		<div class="card" data-target="modal-2" data-category="ai">
 			<div class="card-inner">
 				<div class="card-front" data-bg="./assest/files/projects/c4/c4_card_front.png">
 					<div class="card-title">
@@ -53,7 +61,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="card" data-target="modal-3">
+		<div class="card" data-target="modal-3" data-category="ai, software">
 			<div class="card-inner">
 				<div class="card-front" data-bg="./assest/files/projects/hgr/hgr_front.png">
 					<div class="card-title">
@@ -78,7 +86,30 @@
 				</div>
 			</div>
 		</div>
-		<div class="card" data-target="modal-4">
+		<div class="card" data-target="modal-4" data-category="web">
+			<div class="card-inner">
+				<div class="card-front" data-bg="./assest/files/projects/X_clone/X_logo.png">
+					<div class="card-title">
+						<h2>X Clone <br> Web Application</h2>
+					</div>
+					<div class="card-bottom">
+						<p>React</p>
+						<p>TypeScript</p>
+						<p>firebase</p>
+					</div>
+				</div>
+				<div class="card-back">
+					<ul>
+						<li>
+							<h2>Implemented hand gesture detection using Python, OpenCV, and MediaPipe, enabling real-time data
+								collection through a camera. The ML model is built using TensorFlow, where an NN was constructed and
+								trained using feedforward and backpropagation techniques.</h2>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="card" data-target="modal-5" data-category="software">
 			<div class="card-inner">
 				<div class="card-front" data-bg="./assest/files/projects/enigma/em_card_front.png">
 					<div class="card-title">
@@ -104,7 +135,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="card" data-target="modal-5">
+		<div class="card" data-target="modal-6" data-category="software">
 			<div class="card-inner">
 				<div class="card-front">
 					<div class="card-title">
@@ -131,34 +162,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="card">
-			<div class="card-inner">
-				<div class="card-front">
-					<div class="card-title">
-						<h2>Car Counting <br> using YOLO</h2>
-					</div>
-					<div class="card-bottom">
-						<p>Python</p>
-						<p>YOLO v4</p>
-						<p>OpenCV</p>
-						<p>CV Algorithms</p>
-					</div>
-				</div>
-				<div class="card-back">
-					<ul>
-						<li><h2>Initially, we attempted to implement vehicle detection using purely computer vision techniques, including edge detection and background subtraction.</h2></li>
-						<li>
-							<h2>To find a better vehicle detector, we tried machine learning-based methods like You-Only-Look-Once (YOLO). YOLO is a popular object detection algorithm known for its speed and accuracy.</h2>
-						</li>
-					</ul>
-					<button class="modal-btn" data-target="modal-6">
-						<div class="uil uil-plus"></div>
-						Details
-					</button>
-				</div>
-			</div>
-		</div> -->
-		<div class="card" data-target="modal-6">
+		<div class="card" data-target="modal-7" data-category="ai">
 			<div class="card-inner">
 				<div class="card-front">
 					<div class="card-title">

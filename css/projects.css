@@ -27,11 +27,60 @@
 	color: #292929;
 }
 
+.projects-tab {
+	display: flex;
+	justify-content: center;
+	/* 탭 리스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 탭 리스트를 수직 중앙 정렬 */
+	/* background-color: #f1f1f1; */
+	padding: 10px;
+	margin-bottom: 20px;
+	width: auto;
+	/* 탭 크기를 자동으로 맞추기 */
+}
+
+.tab-list {
+	display: flex;
+	/* Flexbox를 사용하여 항목들을 가로로 정렬 */
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.tab-item {
+	display: flex;
+	justify-content: center;
+	margin-right: 20px;
+	/* 탭 항목들 간의 간격 */
+	cursor: pointer;
+	font-weight: bold;
+	border: 1px solid black;
+	border-radius: 25px;
+	padding: 10px;
+	min-width: 50px;
+}
+
+.tab-item.active {
+	color: white;
+	background-color: var(--main-background-color);
+	border-color: transparent;
+}
+
+.tab-content {
+	display: none;
+}
+
+.tab-content.active {
+	display: block;
+}
+
 .projects__container {
 	max-width: 100%;
 	margin: 0 auto;
 	display: flex;
-	align-items: center;
+	flex-direction: row;
+	align-items: flex-start;
 	justify-content: flex-start;
 	position: relative;
 
@@ -46,17 +95,17 @@
 	/* Space between cards */
 	scroll-snap-type: x mandatory;
 	list-style: none;
+	margin: 0 80px;
 }
 
+/* 
 .projects__wrapper .card:first-child {
 	margin-left: 80px;
-	/* Adjust to your desired value */
 }
 
 .projects__wrapper .card:last-child {
 	margin-right: 80px;
-	/* Adjust to your desired value */
-}
+} */
 
 .projects__container::-webkit-scrollbar {
 	height: 12px;
@@ -149,6 +198,9 @@
 .card:hover .card-inner {
 	transform: scale(1.05);
 	z-index: 2;
+	transition: transform 0.6s ease, z-index 0.6s ease box-shadow 0.6s ease;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+	border-radius: var(--card_boarder-radius);
 }
 
 .card-front,

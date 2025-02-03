@@ -120,19 +120,41 @@
 			</div>
 			<div class="modal-columns">
 				<div class="modal-left">
-					<h2 id="modal-title-3">Into</h2>
+					<h2 id="modal-title-3">Intro</h2>
 					<p>
 						<li>A YouTube Controller using hand gesture recognition, employing the MediaPipe library for Python. Use
 							the pre-trained hand gesture detection (hgd) model that was initially developed by Kazuhito00.
 							Developed a Java-based YouTube video controller to extract outputs from a
-							Python-based HGD and integrate them seamlessly.</li>
-						<!-- 컨트롤러 설명 -->
+							Python-based HGD and integrate them seamlessly.
+						</li>
 					</p>
+
+					<h2 id="modal-title-3">Controller Features</h2>
+					<p>
+					<ul>
+						<li><strong>Left Hand - Video Control</strong>
+							<ul>
+								<li><strong>Thumbs up (left side):</strong> Rewind</li>
+								<li><strong>Thumbs up (right side):</strong> Fast forward</li>
+								<li><strong>All fingers spread:</strong> Pause (Spacebar)</li>
+								<li><strong>Fist:</strong> No action</li>
+							</ul>
+						</li>
+						<li><strong>Right Hand - Mouse Control</strong>
+							<ul>
+								<li>Currently in development for controlling the mouse.</li>
+							</ul>
+						</li>
+					</ul>
+					</p>
+					<!-- 컨트롤러 설명 -->
+
 					<h2 id="modal-title-3">Summary</h2>
 					<p>
-						<li>Modified open source hand gesture detection using Python, OpenCV, and MediaPipe, enabling real-time data
-							collection through a camera. The ML model is built using TensorFlow, where an NN was constructed and
-							trained using feedforward and backpropagation techniques.</li>
+						<li>Modified an open-source hand gesture recognition system to interface with a Java application. The HGR
+							model, built with Python, OpenCV, and MediaPipe, enables real-time gesture detection via a camera. The
+							machine learning model, developed using TensorFlow, features a neural network trained with feedforward and
+							backpropagation techniques.</li>
 						<!-- 어떤 부분을 정확히 modify했는지 적기 -->
 						<li>Developed a user interaction software using Java and connected it to a Python hand gesture detection
 							software using ProcessBuilder. I utilized threads to enable real-time operation of both software

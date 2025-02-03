@@ -17,6 +17,11 @@
 	/* Enable vertical scroll */
 }
 
+ul {
+	padding-left: 20px;
+	/* 왼쪽 여백을 추가하여 들여쓰기 */
+}
+
 .modal-wrap {
 	position: relative;
 	max-width: 70%;

@@ -1,0 +1,82 @@
+/* Your existing CSS styles */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(31, 32, 41, 0.75);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 250ms ease-in-out;
+	z-index: 100;
+	overflow-y: auto;
+	/* Enable vertical scroll */
+}
+
+ul {
+	padding-left: 20px;
+	/* 왼쪽 여백을 추가하여 들여쓰기 */
+}
+
+.modal-wrap {
+	position: relative;
+	max-width: 70%;
+	/* Adjust as needed */
+	max-height: 70%;
+	/* Adjust as needed */
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	background-color: whitesmoke;
+	border-radius: 20px;
+	box-shadow: 0 12px 25px 0 rgba(199, 175, 189, 0.25);
+	overflow-y: auto;
+	/* Enable vertical scroll */
+}
+
+.modal-title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #333;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	/* Center items vertically */
+}
+
+.modal-title img {
+	border-radius: 0;
+	width: 10%;
+	height: auto;
+}
+
+/* .modal-title btn {} */
+
+.modal-columns {
+	display: grid;
+	grid-template-columns: 50% 1fr;
+}
+
+.modal-left {
+	flex: 1;
+	padding: 20px;
+	background-color: whitesmoke;
+}
+
+.modal-left li {
+	margin-bottom: 10px;
+}
+
+/* Modal Close Button */
+.close-btn {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	font-size: 30px;
+	cursor: pointer;
+	color: #333;
+}

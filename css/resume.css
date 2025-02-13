@@ -1,0 +1,36 @@
+:root {
+	--width-padding: 70%;
+}
+
+.resume {
+	display: flex;
+	justify-content: center;
+	/* Horizontally center the child */
+	align-items: center;
+	/* Vertically center the child */
+}
+
+.resume-container {
+	background-color: whitesmoke;
+	height: 1000px;
+	width: var(--width-padding);
+
+}
+
+.resume-title {
+	font-size: 20px;
+	margin-top: 3rem;
+	text-align: center;
+}
+
+.resume-box {
+	display: flex;
+	justify-content: center;
+	margin: 50px 0;
+}
+
+iframe {
+	width: 80%;
+	height: 800px;
+	border: 1px solid #ddd;
+}
